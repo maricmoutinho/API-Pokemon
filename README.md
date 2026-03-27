@@ -64,7 +64,7 @@ let id = Math.floor(Math.random() * 151) + 1;
 
 ## 💻 Como Executar o Projeto
 
-1. Baixe/clone este repositório ou acesse: 
+1. Baixe/clone este repositório ou acesse: https://api-pokemon23.netlify.app/
 2. Abra o arquivo index.html no navegador
 3. Clique no botão Sortear Pokémon
 4. Veja as informações sendo exibidas 🎉
