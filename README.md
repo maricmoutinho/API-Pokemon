@@ -78,7 +78,7 @@ let id = Math.floor(Math.random() * 151) + 1;
 
 ---
 
-##📚 Aprendizados
+## 📚 Aprendizados
 
 Este projeto é ideal para praticar:
 
