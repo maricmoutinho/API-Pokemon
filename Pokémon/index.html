@@ -1,29 +1,59 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
+   
+    <!-- Responsividade -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokémon Go</title>
+   
+    <!-- SEO -->
+    <title>Pokemon App - Sorteador de Pokémon</title>
+    <meta name="description" content="Aplicativo que sorteia Pokémons aleatórios com imagem usando a PokéAPI. Clique e descubra um novo Pokémon!" />
+    <meta name="author" content="Maria Clara Moutinho" />
+    <meta name="keywords" content="pokemon, pokedex, api pokemon, javascript, sorteador pokemon" />
+ 
+    <meta name="theme-color" content="ff3b3b">
+    <link rel="icon" href="icons/icon-512.png" type="image/png">
+    <link rel="apple-touch-icon" href="icons/icon-512.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
 
 
     <link rel="stylesheet" href="style.css" />
+    
+   
+
   </head>
+ 
   <body>
-    <div class="container">
-      <img width="150px" src="Captura de tela 2026-03-24 211234.png" />
-
-
-      <h2>Pokémon Go</h2>
-      <p>Clique no botão a seguir para encontrar um Pokémon</p>
-
-
-      <button onclick="getPokemon()">Sortear Pokémon</button>
-
-
-      <div id="pokemon"></div>
-    </div>
-
-
+    <header>
+      <h1>Pokémon Go</h1>
+    </header>
+ 
+    <main>
+      <section class="container">
+       
+        <!-- IMAGEM COM ACESSIBILIDADE -->
+        <img
+          src="Captura de tela 2026-03-24 211234.png"
+          alt="Logo do aplicativo Pokémon"
+          width="150"
+        />
+ 
+        <h2>Descubra um Pokémon</h2>
+ 
+        <p>Clique no botão abaixo para sortear um Pokémon aleatório.</p>
+ 
+        <!-- BOTÃO ACESSÍVEL -->
+        <button onclick="getPokemon()" aria-label="Sortear um Pokémon">
+          Sortear Pokémon
+        </button>
+ 
+        <!-- ÁREA DINÂMICA ACESSÍVEL -->
+        <div id="pokemon" aria-live="polite"></div>
+ 
+      </section>
+    </main>
+ 
     <script src="script.js"></script>
   </body>
 </html>

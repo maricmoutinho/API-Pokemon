@@ -1,8 +1,18 @@
 async function getPokemon() {
   let div = document.getElementById("pokemon");
  
-  div.innerHTML = "<p>Carregando...</p>";
- 
+  div.innerHTML = "<p>📍 Obtendo localização...</p>";
+
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      console.log("Latitude:", position.coords.latitude);
+      console.log("Longitude:", position.coords.longitude);
+    },
+    (error) => {
+      console.error("Erro ao obter localização:", error);
+    }
+  );
+
   try {
     let id = Math.floor(Math.random() * 151) + 1;
  
@@ -23,7 +33,7 @@ async function getPokemon() {
     div.innerHTML = `
             <div>
                 <h3 style="text-transform: capitalize;">${pokemon.name}</h3>
-                <img width="200" src="${foto}">
+                <img width="200" src="${foto}" alt="Imagem do Pokémon ${pokemon.name}">
                 <p><strong>Tipo:</strong> ${pokemon.types.map((t) => t.type.name).join(", ")}</p>
             </div>
         `;
@@ -34,4 +44,12 @@ async function getPokemon() {
             <p style="color:red;">Erro ao carregar Pokémon 😢</p>
         `;
   }
+}
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker registrado"))
+      .catch(err => console.log("Erro:", err));
+  });
 }
